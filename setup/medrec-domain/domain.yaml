@@ -102,11 +102,11 @@ spec:
   clusters:
   - clusterName: medrec-cluster
     serverStartState: "RUNNING"
-    replicas: 3
+    replicas: 2
 
   # The number of managed servers to start for any unlisted clusters
   # replicas: 1
   #
   # Domain Configuration Overrides
-  configOverrides: jdbccm
-  configOverrideSecrets: [mrdbsecret,dbsecret]
+  #configOverrides: jdbccm
+  #configOverrideSecrets: [mrdbsecret,dbsecret]
