@@ -1,0 +1,18 @@
+-- Reset to Head
+git reset HEAD
+git pull
+-- Git ammend
+git commit -a
+git push
+--
+Set global name and email (complaints from git)
+git config --global user.name "martien.van.den.akker@darwin-it.nl"
+git config --global user.email "martien.van.den.akker@darwin-it.nl"
+
+-- Set shell scripts executable
+touch *.sh
+git ls-files --stage
+git update-index --chmod=+x *.sh
+git ls-files --stage
+git commit -m "Set Executable" 
+git push
