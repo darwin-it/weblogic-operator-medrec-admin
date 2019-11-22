@@ -9,6 +9,7 @@ apiVersion: v1
 metadata:
  name: medrecdbhostname
 spec:
+ type: ClusterIP
  ports:
  - port: 1521
    targetPort: 1521
