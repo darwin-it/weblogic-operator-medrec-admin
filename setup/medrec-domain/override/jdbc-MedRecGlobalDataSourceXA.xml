@@ -4,7 +4,7 @@
                   xmlns:s="http://xmlns.oracle.com/weblogic/situational-config">
   <name>MedRecGlobalDataSourceXA</name>
   <jdbc-driver-params>
-    <url f:combine-mode="replace">${secret:mrdbsecret.url}</url>
+    <url f:combine-mode="replace">jdbc:oracle:thin:@${secret:mrdbsecret.url}</url>
     <properties>
        <property>
           <name>user</name>

@@ -102,7 +102,7 @@ spec:
   clusters:
   - clusterName: medrec-cluster
     serverStartState: "RUNNING"
-    replicas: 2
+    replicas: 3
 
   # The number of managed servers to start for any unlisted clusters
   # replicas: 1
