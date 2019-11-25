@@ -1,0 +1,9 @@
+medrecdb =
+  (DESCRIPTION=
+    (ADDRESS_LIST=
+      (ADDRESS=(PROTOCOL=TCP)(HOST=10.0.10.6)(PORT=1521))
+    )
+  (CONNECT_DATA=
+     (SERVICE_NAME=pdb1.sub40efe034a.medrecokecluste.oraclevcn.com)
+  )
+)
