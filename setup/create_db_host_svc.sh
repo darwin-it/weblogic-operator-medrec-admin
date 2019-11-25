@@ -8,7 +8,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: medrecdbhostname
-Spec:
+spec:
   type: ClusterIP
   ports:
   - port: 1521
