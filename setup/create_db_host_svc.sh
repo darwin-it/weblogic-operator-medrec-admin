@@ -7,20 +7,20 @@ cat <<EOF | kubectl apply -f -
 kind: Service
 apiVersion: v1
 metadata:
-name: medrecdbhostname
-spec:
-type: ClusterIP
-ports:
-- port: 1521
-  targetPort: 1521
+  name: medrecdbhostname
+Spec:
+  type: ClusterIP
+  ports:
+  - port: 1521
+    targetPort: 1521
 ---
 kind: Endpoints
 apiVersion: v1
 metadata:
-name: medrecdbhostname
+  name: medrecdbhostname
 subsets:
-- addresses:
+  - addresses:
     - ip: 10.0.10.6
-  ports:
+    ports:
     - port: 1521
 EOF
