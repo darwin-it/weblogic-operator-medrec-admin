@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: instant-client-deployment
+  labels:
+    app: instant-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: instant-client
+  template:
+    metadata:
+      labels:
+        app: instant-client
+    spec:
+      containers:
+      - name: instant-client
+        image: container-registry.oracle.com/database/instantclient:12.2.0.1
+      imagePullSecrets: 
+      - name: ocr
