@@ -67,9 +67,9 @@ spec:
     # an (optional) list of environment variable to be set on the servers
     env:
     - name: JAVA_OPTIONS
-      value: "-Dweblogic.StdoutDebugEnabled=false"
+      value: "-Dweblogic.StdoutDebugEnabled=false -Doracle.jdbc.fanEnabled=false"
     - name: USER_MEM_ARGS
-      value: "-Xms64m -Xmx256m "
+      value: "-Xms64m -Xmx256m -XX:+UseContainerSupport -Djava.security.egd=file:/dev/./urandom "
 
     # If you are storing your domain on a persistent volume (as opposed to inside the Docker image),
     # then uncomment this section and provide the PVC details and mount path here (standard images
@@ -102,11 +102,11 @@ spec:
   clusters:
   - clusterName: medrec-cluster
     serverStartState: "RUNNING"
-    replicas: 3
+    replicas: 2
 
   # The number of managed servers to start for any unlisted clusters
   # replicas: 1
   #
   # Domain Configuration Overrides
-  #configOverrides: jdbccm
-  #configOverrideSecrets: [mrdbsecret,dbsecret]
+  configOverrides: jdbccm
+  configOverrideSecrets: [mrdbsecret,dbsecret]
