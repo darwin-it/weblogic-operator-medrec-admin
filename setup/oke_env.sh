@@ -15,3 +15,7 @@ export OCIR_CRED=ocirsecret
 export WLS_DMN_YAML=/u01/content/github/weblogic-operator-medrec-admin/setup/medrec-domain/domain.yaml
 export WLS_DMN_UID=medrec-domain
 export MR_DB_CRED=mrdbsecret
+export ADM_POD=medrec-domain-adminserver
+export MR1_POD=medrec-domain-medrec-server1
+export MR2_POD=medrec-domain-medrec-server2
+export MR3_POD=medrec-domain-medrec-server3
