@@ -1,0 +1,43 @@
+Demo horende bij 20191003-Kubernetes Managed Weblogic Revival.pptx
+
+Start with
+http://130.61.12.8/console (Weblogic Console)
+en
+http://130.61.12.8/medrec/index.xhtml (optional)
+
+Slide OKE Cluster and its VCN context
+OCI infrastructure OKE cluster and VCN
+[oracle@localhost setup]$ cd /u01/content/github/weblogic-operator-medrec-admin/setup
+[oracle@localhost setup]$ pwd
+cd /u01/content/github/weblogic-operator-medrec-admin/setup
+
+oracle@localhost setup]$ ./okegetnodes.sh
+Set OKE Environment
+Get K8s nodes
+NAME        STATUS   ROLES   AGE   VERSION
+10.0.10.2   Ready    node    21d   v1.13.5
+10.0.10.3   Ready    node    21d   v1.13.5
+10.0.10.4   Ready    node    21d   v1.13.5
+
+Slide OKE Cluster within OCI Console
+
+Slide Weblogic running within an OKE Cluster
+./okegetdmnpods.sh 
+set OKE Environment
+Get K8s pods for medrec-domain-ns
+NAME                           READY   STATUS    RESTARTS   AGE   IP            NODE        NOMINATED NODE   READINESS GATES
+medrec-domain-adminserver      1/1     Running   0          12m   10.244.2.60   10.0.10.4   <none>           <none>
+medrec-domain-medrec-server1   1/1     Running   0          12m   10.244.1.67   10.0.10.3   <none>           <none>
+medrec-domain-medrec-server2   1/1     Running   0          12m   10.244.2.61   10.0.10.4   <none>           <none>
+
+Slide Managed servers within weblogic domain running on a OKE cluster
+->Show servers within weblogic console
+
+Slide How to access a managed database outside an OKE cluster?
+Required Topology - reguires a managed database 
+
+Slide Runtime access to a managed database via a k8s service
+No demo of kubectl or OCI
+
+Slide k8s service medrecdbhostname details with kubectl
+oracle@localhost setup]$ kubectl describe  service medrecdbhostname
